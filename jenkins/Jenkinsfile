@@ -7,11 +7,15 @@ pipeline {
     }
     stages {
       	stage('SCM') {
-    		git 'https://github.com/foo/bar.git'
+      		steps {
+    			git 'https://github.com/MainakB/simple-java-maven-app.git'
+    		}
   		}
   		stage('SonarQube analysis') {
-    		withSonarQubeEnv('sonar-maven') {
-      			sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+  			steps{
+    			withSonarQubeEnv('sonar-maven') {
+      				sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+    			}
     		}
   		}
         stage('Build') {
