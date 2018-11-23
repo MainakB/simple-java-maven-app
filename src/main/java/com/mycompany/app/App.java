@@ -1,4 +1,4 @@
-package com.mycompanykaniam.app;
+package com.mycompany.app;
 
 /**
  * Hello world!

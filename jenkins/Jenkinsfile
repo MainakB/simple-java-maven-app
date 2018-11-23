@@ -14,7 +14,7 @@ pipeline {
   		stage('SonarQube analysis') {
   			steps{
     			withSonarQubeEnv('sonar-maven') {
-      				sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar -Dsonar.login=6b98920bba648edb23ba5e9eb5a81a276e381c5d'
+      				sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
     			}
     		}
   		}
